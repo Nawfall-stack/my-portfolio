@@ -1,22 +1,37 @@
-'use client';
+"use client";
 
-import { AboutMe, Header, Hero, TechStack, Project, Testimonial } from '@/components/molecule-component';
-import { TypographyH1 } from '@/components/shadcn-component';
+import {
+  AboutMe,
+  Hero,
+  TechStack,
+  Project,
+  Testimonial,
+  ContactUs,
+} from "@/components/features/homepage/index";
+import { AnimatedContent } from "@/components/ui/reactbits/index";
+
+const sections = [Hero, AboutMe, TechStack, Project, Testimonial];
 
 export default function Home() {
   return (
     <>
-      <Header></Header>
-      <Hero></Hero>
-      <AboutMe></AboutMe>
-      <TechStack></TechStack>
-      <Project></Project>
-      <Testimonial></Testimonial>
-      <div>
-        <div className={'m-auto'}>
-          <TypographyH1>Contact Us</TypographyH1>
-        </div>
-      </div>
+      {sections.map((Section, index) => (
+        <AnimatedContent
+          key={index}
+          distance={125}
+          direction="vertical"
+          reverse={false}
+          duration={1.5}
+          ease="power3.out"
+          initialOpacity={0.2}
+          animateOpacity
+          threshold={0.2}
+          delay={0.3}
+        >
+          <Section />
+        </AnimatedContent>
+      ))}
+      <ContactUs />
     </>
   );
 }
