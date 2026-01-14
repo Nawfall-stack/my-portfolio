@@ -73,7 +73,7 @@ export function Project() {
       </div>
       <div className="flex justify-center gap-4">
         <Button variant={"secondary"}>
-          <Link href={"/collection"}> See My Collections</Link>
+          <Link href={"/collections"}> See My Collections</Link>
         </Button>
         <Button variant={"secondary"}>
           <Link href={"/showcase"}>See My Showcases</Link>
